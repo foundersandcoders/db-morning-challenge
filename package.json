@@ -1,0 +1,24 @@
+{
+  "name": "db-morning-challenge",
+  "version": "1.0.0",
+  "description": "A morning challenge for week 6 of fac",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shiryz/db-morning-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shiryz/db-morning-challenge/issues"
+  },
+  "homepage": "https://github.com/shiryz/db-morning-challenge#readme",
+  "dependencies": {
+    "env2": "^2.1.1",
+    "pg": "^6.1.2",
+    "url": "^0.11.0"
+  }
+}
