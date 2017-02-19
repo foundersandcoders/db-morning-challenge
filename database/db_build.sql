@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS books (
     library     TEXT
 );
 
-INSERT INTO books (book_name, year, max_reservation_time, library) VALUES ('Javascript: The Good Parts', 2008, 14, 'The British Library');
+INSERT INTO books (book_name, year, max_reservation_time, library) VALUES ('Javascript: The Good Parts', 2008, 21, 'The British Library');
 INSERT INTO books (book_name, year, max_reservation_time, library) VALUES ('Linux in a Nutshell', 2009, 7, 'Abu-Salma library');
 INSERT INTO books (book_name, year, max_reservation_time, library) VALUES ('PostgreSQL Server Programming - Second Edition', 2015, 10, 'The British Library');
 INSERT INTO books (book_name, year, max_reservation_time, library) VALUES ('Don''t Make Me Think', 2000, 7, 'Finland national library');
@@ -38,5 +38,28 @@ INSERT INTO posts (num, mentor_name) VALUES (32, 'Shireen');
 INSERT INTO posts (num, mentor_name) VALUES (44, 'Shireen');
 INSERT INTO posts (num, mentor_name) VALUES (19, 'Tom');
 INSERT INTO posts (num, mentor_name) VALUES (57, 'Shireen');
+
+CREATE TABLE IF NOT EXISTS likes (
+    mentor_name    TEXT,
+    post_num    INTEGER
+);
+
+INSERT INTO likes (mentor_name, post_num) VALUES ('Emily', 20);
+INSERT INTO likes (mentor_name, post_num) VALUES ('Emily', 44);
+INSERT INTO likes (mentor_name, post_num) VALUES ('Emily', 19);
+INSERT INTO likes (mentor_name, post_num) VALUES ('Emily', 57);
+INSERT INTO likes (mentor_name, post_num) VALUES ('Shireen', 20);
+INSERT INTO likes (mentor_name, post_num) VALUES ('Shireen', 19);
+INSERT INTO likes (mentor_name, post_num) VALUES ('Jack', 20);
+INSERT INTO likes (mentor_name, post_num) VALUES ('Jack', 19);
+INSERT INTO likes (mentor_name, post_num) VALUES ('Jack', 32);
+INSERT INTO likes (mentor_name, post_num) VALUES ('Jack', 44);
+INSERT INTO likes (mentor_name, post_num) VALUES ('Tom', 20);
+INSERT INTO likes (mentor_name, post_num) VALUES ('Tom', 32);
+INSERT INTO likes (mentor_name, post_num) VALUES ('Tom', 44);
+INSERT INTO likes (mentor_name, post_num) VALUES ('Steve', 32);
+INSERT INTO likes (mentor_name, post_num) VALUES ('Steve', 44);
+INSERT INTO likes (mentor_name, post_num) VALUES ('Steve', 19);
+INSERT INTO likes (mentor_name, post_num) VALUES ('Steve', 57);
 
 COMMIT;
