@@ -62,4 +62,4 @@ The challenge:
 #### Level 3 challenge (bonus):
 
 Building on the queries you just wrote (Level 2), Construct a query that returns
-the avg number of likes per post in each location.
+the average number of likes per post in each location.
