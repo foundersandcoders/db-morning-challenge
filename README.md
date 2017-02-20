@@ -8,8 +8,10 @@ and use sub-queries.
  - Login via github.
  - Create a new instance , in order to create the new database.
  - Clone / fork this repo.
+ - Type `cd db-morning-challenge` into your command line.
  - Type `npm install` in your command line.
  - Create a `config.env` file.
+  - You can do so by typing `touch config.env` in the command line or manually in your favorite editor.
  - In the `config.env` file add a variable called `DB_URL`, and its value is the
   url provided after creating the database on elephantsql (clicking on the database
     created, Details tab and copying the url).
