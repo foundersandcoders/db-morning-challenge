@@ -1,67 +1,71 @@
 ## Databases morning challenge
 
-The purpose of this challenge is to construct complicated queries, learn about joins
-and use sub-queries.
+The purpose of this challenge is to construct complicated queries, learn about joins and use some subqueries.
 
-#### 5 - minutes setup:
- - Go to [elephantsql](https://www.elephantsql.com/).
- - Login via github.
- - Create a new instance , in order to create the new database.
- - Clone / fork this repo.
- - Type `cd db-morning-challenge` into your command line.
- - Type `npm install` in your command line.
- - Create a `config.env` file.
-  - You can do so by typing `touch config.env` in the command line or manually in your favorite editor.
- - In the `config.env` file add a variable called `DB_URL`, and its value is the
-  url provided after creating the database on elephantsql (clicking on the database
-    created, Details tab and copying the url).
-  - Run `node database/db_build.js`. (This step should log database created to your
-    terminal and may take a few moments to finish).
+#### 5-minute setup:
+- Clone / fork this repo: `$ git@github.com:shiryz/db-morning-challenge.git`
+- cd into the repo in your command line `$ cd db-morning-challenge`
+- Install dependencies with `$ npm install`
+- In your browser, go to [ElephantSQL](https://www.elephantsql.com/)
+- Log into ElephantSQL via GitHub
+- Click on 'Create new instance' to create a new database
+- Give your database a name, choose the 'Tiny Turtly' free plan, and select any data center from the list
+- Click on the name of your new new database to see details; you'll need the URL. Copy this to your clipboard!
+- Back in your command line, create a config.env file with the url of your new database. You can do that like this
+  `$ echo "export DB_URL = {YOUR_COPIED_URL}" >> "config.env"`
+- Build your database by running: `$ node database/db_build.js`
 
-By doing these steps you will have created a database and then running `db_build.js`
-will create the tables.
-Going to browser tab in elephantsql will allow you to view the tables and manipulate
-them.
+You're done!
 
-#### Warm up challenge:
+#### Using ElephantSQL
 
-One of the tables you have created is a books table:
+Go to the 'browser' tab in ElephantSQL to view your tables and manipulate them.
+
+For each of the challenges below, write and test your queries in ElephantSQL and save them in a text editor when you're happy with them.
+
+#### Challenge 1
+
+One of the tables you have created is a books table that looks like this:
 
 | book_id | book_name | year | max_reservation_time | library |
 | ------- | --------- | ---- | -------------------- | ------- |
 
-your challenge is to construct a query that returns the book_id, book_name, max_reservation_time
-of books that can be reserved for time that is greater than the avg reservation time
-in the book's library.
+your challenge is to construct a query that returns the following columns:
+* `book_id`, 
+* `book_name`, 
+* `max_reservation_time`,
+* `book_id`, 
+* `book_name max_reservation_time`
+**AND** to return only the books that can be reserved for a time greater than the **average** reservation time for all books at the given library.
 
 *Hint: try using sub queries*
 
-#### Level 2 challenge:
+#### Challenge 2:
 
-You have created 3 tables, mentors table, it includes the mentor's name and the
-location where they're based:
+Your database contains 3 more tables:
+
+**Mentors**
+For storing details of FAC mentors.
 
 | name | location |
 | ---- |--------- |
 
-a posts table, which includes the post's number and the name of the mentor who
-posted it:
+**Posts**
+For things that have been posted by mentors:
 
 | num | mentor_name |
 | --- |------------ |
 
-a likes table, which includes the mentor's name who liked the post and the number
-of the post they liked:
+**Likes**
+For the likes posts have received, and the *person who liked it*
 
 | mentor_name | post_num |
 | ----------- |--------- |
 
-The challenge:
-- Construct a query that returns the number of likes every person got.
-- Construct a query that returns the location and the post number, for posts that
-  have been liked by a mentor from that location.
+**The challenge:**
+- Construct a query that returns the names of mentors and the number of likes each mentor got, in total, for all their posts
+- Construct a query that returns the location and the post number of posts that have been liked by a mentor from the same location as the author
 
-#### Level 3 challenge (bonus):
+#### Challenge 3 (bonus, you can try this one at home!)
 
-Building on the queries you just wrote (Level 2), Construct a query that returns
-the average number of likes per post in each location.
+Building on the queries you wrote in level 2, construct another query that returns the **average number of likes per post** in each location.
