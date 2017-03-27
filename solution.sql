@@ -1,0 +1,33 @@
+-- 1.
+  SELECT book_id, book_name, max_reservation_time
+  FROM books B
+  WHERE max_reservation_time >
+  (SELECT AVG(max_reservation_time) FROM books
+  WHERE library = B.library)
+
+-- 2.
+-- 2.1.
+  SELECT COUNT(num), posts.mentor_name FROM posts INNER JOIN likes ON post_num=num GROUP BY posts.mentor_name
+-- 2.2.
+  SELECT location, post_num FROM mentors INNER JOIN likes ON name=mentor_name
+
+-- 3. by Emily
+SELECT
+  location,
+  AVG(total_likes)::integer
+
+FROM (
+  SELECT
+    location,
+    COUNT(l.*) "total_likes"
+
+  FROM mentors auth
+  JOIN posts p ON p.mentor_name = auth.name
+  JOIN likes l ON l.post_num = p.num
+
+  GROUP BY
+    p.num,
+    auth.location
+) AS Q1
+
+GROUP BY location;
