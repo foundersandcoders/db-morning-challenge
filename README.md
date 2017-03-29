@@ -63,7 +63,8 @@ For the likes posts have received, and the *person who liked it*
 
 **The challenge:**
 - Construct a query that returns the names of mentors and the number of likes each mentor got, in total, for all their posts
-- Construct a query that returns the location and the post number of posts that have been liked by a mentor from the same location as the author
+- Construct a query that returns the location and the post number, for posts that
+  have been liked by a mentor from that location.
 
 #### Challenge 3 (bonus, you can try this one at home!)
 
