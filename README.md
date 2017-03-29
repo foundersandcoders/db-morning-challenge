@@ -3,7 +3,7 @@
 The purpose of this challenge is to construct complicated queries, learn about joins and use some subqueries.
 
 #### 5-minute setup:
-- Clone / fork this repo: `$ git@github.com:shiryz/db-morning-challenge.git`
+- Clone / fork this repo.
 - cd into the repo in your command line `$ cd db-morning-challenge`
 - Install dependencies with `$ npm install`
 - In your browser, go to [ElephantSQL](https://www.elephantsql.com/)
