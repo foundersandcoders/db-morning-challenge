@@ -6,22 +6,21 @@ The purpose of this challenge is to construct complicated queries, learn about j
 - Clone / fork this repo.
 - cd into the repo in your command line `$ cd db-morning-challenge`
 - Install dependencies with `$ npm install`
-- In your browser, go to [ElephantSQL](https://www.elephantsql.com/)
-- Log into ElephantSQL via GitHub
-- Click on 'Create new instance' to create a new database
-- Give your database a name, choose the 'Tiny Turtly' free plan, and select any data center from the list
-- Click on the name of your new new database to see details; you'll need the URL. Copy this to your clipboard!
+- Create an app on Heroku `heroku create app-name-here --region eu` (If you haven't yet installed Heroku CLI see [here](https://devcenter.heroku.com/articles/heroku-cli)
+- Push to Heroku `git push heroku master`
+- Create a new database on Heroku: `heroku addons:create heroku-postgresql:hobby-dev`
+- Find the database url on the heroku dashboard for your project, under settings (click reveal config vars)
 - Back in your command line, create a config.env file with the url of your new database. You can do that like this
-  `$ echo "export DB_URL = {YOUR_COPIED_URL}" >> "config.env"`
+  `$ echo "export DB_URL = {YOUR_COPIED_DATABASE_URL}" >> "config.env"`
 - Build your database by running: `$ node database/db_build.js`
 
 You're done!
 
-#### Using ElephantSQL
+#### Using Heroku databases
 
-Go to the 'browser' tab in ElephantSQL to view your tables and manipulate them.
+Access your database from the command line with `psql {YOUR_COPIED_DATABASE_URL}`
 
-For each of the challenges below, write and test your queries in ElephantSQL and save them in a text editor when you're happy with them.
+For each of the challenges below, write and test your queries in the command line and save them in a text editor when you're happy with them, so you can refer back to them later.
 
 #### Challenge 1
 
@@ -31,13 +30,21 @@ One of the tables you have created is a books table that looks like this:
 | ------- | --------- | ---- | -------------------- | ------- |
 
 your challenge is to construct a query that returns the following columns:
-* `book_id`, 
-* `book_name`, 
+* `book_id`,
+* `book_name`,
 * `max_reservation_time`
 
 **AND** to return only the books that can be reserved for a time greater than the **average** reservation time for all books at the library *this* book is in.
 
 *Hint: try using sub queries*
+
+You should expect to see this:
+
+| book_id | book_name                                | max_reservation_time |
+|---------|------------------------------------------|----------------------|
+| 1       | Javascript: The Good Parts               | 21                   |
+| 5       | Pride and Prejudice                      | 21                   |
+
 
 #### Challenge 2:
 
@@ -62,10 +69,48 @@ For the likes posts have received, and the *person who liked it*
 | ----------- |--------- |
 
 **The challenge:**
-- Construct a query that returns the names of mentors and the number of likes each mentor got, in total, for all their posts
+- Construct a query that returns the names of mentors and the number of likes each mentor got, in total, for all their posts.
+
+  You should expect to see this:
+
+| mentor_name | count |
+|-------------|-------|
+| Shireen     | 9     |
+| Tom         | 4     |
+| Steve       | 4     |
+
 - Construct a query that returns the location and the post number, for posts that
   have been liked by a mentor from that location.
+
+  You should expect to see this:
+
+| location | post_num |
+|----------|----------|
+| Nazareth | 20       |
+| Nazareth | 44       |
+| Nazareth | 19       |
+| Nazareth | 57       |
+| Nazareth | 32       |
+| Nazareth | 20       |
+| Nazareth | 19       |
+| Nazareth | 44       |
+| Nazareth | 20       |
+| Nazareth | 19       |
+| London   | 19       |
+| London   | 57       |
+| London   | 32       |
+| London   | 44       |
+| London   | 32       |
+| London   | 44       |
+| London   | 20       |
 
 #### Challenge 3 (bonus, you can try this one at home!)
 
 Building on the queries you wrote in level 2, construct another query that returns the **average number of likes per post** in each location.
+
+You should expect to see this:
+
+| location | avg |
+|----------|-----|
+| Location | 4   |
+| Nazareth | 3   |
