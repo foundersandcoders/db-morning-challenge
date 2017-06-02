@@ -1,3 +1,7 @@
+**Author**: [@shiryz](https://github.com/shiryz)  
+
+**Maintainer**: [@shiryz](https://github.com/shiryz)  
+
 ## Databases morning challenge
 
 The purpose of this challenge is to construct complicated queries, learn about joins and use some subqueries.
@@ -31,8 +35,8 @@ One of the tables you have created is a books table that looks like this:
 | ------- | --------- | ---- | -------------------- | ------- |
 
 your challenge is to construct a query that returns the following columns:
-* `book_id`, 
-* `book_name`, 
+* `book_id`,
+* `book_name`,
 * `max_reservation_time`
 
 **AND** to return only the books that can be reserved for a time greater than the **average** reservation time for all books at the library *this* book is in.
