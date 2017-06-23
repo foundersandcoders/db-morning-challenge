@@ -117,5 +117,5 @@ You should expect to see this:
 
 | location | avg |
 |----------|-----|
-| Location | 4   |
+| London   | 4   |
 | Nazareth | 3   |
