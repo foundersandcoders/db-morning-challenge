@@ -16,7 +16,7 @@ The purpose of this challenge is to construct complicated queries, learn about j
 (You can also create the database with an alias `heroku addons:create heroku-postgresql:hobby-dev --as USERS_DB`)
 - Find the database url, either on the heroku dashboard for your project, under settings (click reveal config vars), or by using `heroku config -s | grep USERS_DB`
 - Back in your command line, create a config.env file with the url of your new database. You can do that like this
-  `$ echo "export DB_URL = {YOUR_COPIED_DATABASE_URL}" >> "config.env"`
+  `$ echo "export DATABASE_URL = {YOUR_COPIED_DATABASE_URL}" >> "config.env"`
 - Build your database by running: `$ node database/db_build.js`
 
 You're done!
