@@ -14,7 +14,7 @@ The purpose of this challenge is to construct complicated queries, learn about j
 - Push to Heroku `git push heroku master`
 - Create a new database on Heroku: `heroku addons:create heroku-postgresql:hobby-dev`
 (You can also create the database with an alias `heroku addons:create heroku-postgresql:hobby-dev --as USERS_DB`)
-- Find the database url, either on the heroku dashboard for your project, under settings (click reveal config vars), or by using `heroku config -s | grep USERS_DB`
+- Find the database url, either on the heroku dashboard for your project, under settings (click reveal config vars), or by using `heroku config -s | grep USERS_DB` (note: make sure to remove the quotations around the url when using this method).
 - Back in your command line, create a config.env file with the url of your new database. You can do that like this
   `$ echo "export DATABASE_URL = {YOUR_COPIED_DATABASE_URL}" >> "config.env"`
 - Build your database by running: `$ node database/db_build.js`
