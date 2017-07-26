@@ -84,12 +84,12 @@ For the likes posts have received, and the *person who liked it*
 | Tom         | 4     |
 | Steve       | 4     |
 
-- Construct a query that returns the location and the post number, for posts that
+- Construct a query that returns the location and the post id, for posts that
   have been liked by a mentor from that location.
 
   You should expect to see this:
 
-| location | post_num |
+| location | post_id |
 |----------|----------|
 | Nazareth | 20       |
 | Nazareth | 44       |
