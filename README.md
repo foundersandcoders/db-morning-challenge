@@ -39,7 +39,7 @@ your challenge is to construct a query that returns the following columns:
 * `book_name`,
 * `max_reservation_time`
 
-**AND** to return only the books that can be reserved for a time greater than the **average** reservation time for all books at the library *this* book is in.
+**AND** to return only the books that can be reserved for a time greater than the **average** reservation time of *its own* library group. (hint: We're not trying to find the overall average across all libraries)
 
 *Hint: try using sub queries*
 
