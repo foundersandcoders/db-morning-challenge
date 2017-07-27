@@ -29,37 +29,37 @@ INSERT INTO mentors (name, location) VALUES ('Steve', 'London');
 INSERT INTO mentors (name, location) VALUES ('Jack', 'Nazareth');
 
 CREATE TABLE IF NOT EXISTS posts (
-    num    INTEGER,
+    id    INTEGER,
     mentor_name    TEXT
 );
 
-INSERT INTO posts (num, mentor_name) VALUES (20, 'Steve');
-INSERT INTO posts (num, mentor_name) VALUES (32, 'Shireen');
-INSERT INTO posts (num, mentor_name) VALUES (44, 'Shireen');
-INSERT INTO posts (num, mentor_name) VALUES (19, 'Tom');
-INSERT INTO posts (num, mentor_name) VALUES (57, 'Shireen');
+INSERT INTO posts (id, mentor_name) VALUES (20, 'Steve');
+INSERT INTO posts (id, mentor_name) VALUES (32, 'Shireen');
+INSERT INTO posts (id, mentor_name) VALUES (44, 'Shireen');
+INSERT INTO posts (id, mentor_name) VALUES (19, 'Tom');
+INSERT INTO posts (id, mentor_name) VALUES (57, 'Shireen');
 
 CREATE TABLE IF NOT EXISTS likes (
     mentor_name    TEXT,
-    post_num    INTEGER
+    post_id    INTEGER
 );
 
-INSERT INTO likes (mentor_name, post_num) VALUES ('Emily', 20);
-INSERT INTO likes (mentor_name, post_num) VALUES ('Emily', 44);
-INSERT INTO likes (mentor_name, post_num) VALUES ('Emily', 19);
-INSERT INTO likes (mentor_name, post_num) VALUES ('Emily', 57);
-INSERT INTO likes (mentor_name, post_num) VALUES ('Shireen', 20);
-INSERT INTO likes (mentor_name, post_num) VALUES ('Shireen', 19);
-INSERT INTO likes (mentor_name, post_num) VALUES ('Jack', 20);
-INSERT INTO likes (mentor_name, post_num) VALUES ('Jack', 19);
-INSERT INTO likes (mentor_name, post_num) VALUES ('Jack', 32);
-INSERT INTO likes (mentor_name, post_num) VALUES ('Jack', 44);
-INSERT INTO likes (mentor_name, post_num) VALUES ('Tom', 20);
-INSERT INTO likes (mentor_name, post_num) VALUES ('Tom', 32);
-INSERT INTO likes (mentor_name, post_num) VALUES ('Tom', 44);
-INSERT INTO likes (mentor_name, post_num) VALUES ('Steve', 32);
-INSERT INTO likes (mentor_name, post_num) VALUES ('Steve', 44);
-INSERT INTO likes (mentor_name, post_num) VALUES ('Steve', 19);
-INSERT INTO likes (mentor_name, post_num) VALUES ('Steve', 57);
+INSERT INTO likes (mentor_name, post_id) VALUES ('Emily', 20);
+INSERT INTO likes (mentor_name, post_id) VALUES ('Emily', 44);
+INSERT INTO likes (mentor_name, post_id) VALUES ('Emily', 19);
+INSERT INTO likes (mentor_name, post_id) VALUES ('Emily', 57);
+INSERT INTO likes (mentor_name, post_id) VALUES ('Shireen', 20);
+INSERT INTO likes (mentor_name, post_id) VALUES ('Shireen', 19);
+INSERT INTO likes (mentor_name, post_id) VALUES ('Jack', 20);
+INSERT INTO likes (mentor_name, post_id) VALUES ('Jack', 19);
+INSERT INTO likes (mentor_name, post_id) VALUES ('Jack', 32);
+INSERT INTO likes (mentor_name, post_id) VALUES ('Jack', 44);
+INSERT INTO likes (mentor_name, post_id) VALUES ('Tom', 20);
+INSERT INTO likes (mentor_name, post_id) VALUES ('Tom', 32);
+INSERT INTO likes (mentor_name, post_id) VALUES ('Tom', 44);
+INSERT INTO likes (mentor_name, post_id) VALUES ('Steve', 32);
+INSERT INTO likes (mentor_name, post_id) VALUES ('Steve', 44);
+INSERT INTO likes (mentor_name, post_id) VALUES ('Steve', 19);
+INSERT INTO likes (mentor_name, post_id) VALUES ('Steve', 57);
 
 COMMIT;

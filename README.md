@@ -39,7 +39,7 @@ your challenge is to construct a query that returns the following columns:
 * `book_name`,
 * `max_reservation_time`
 
-**AND** to return only the books that can be reserved for a time greater than the **average** reservation time for all books at the library *this* book is in.
+**AND** to return only the books that can be reserved for a time greater than the **average** reservation time of *its own* library group. (hint: We're not trying to find the overall average across all libraries)
 
 *Hint: try using sub queries*
 
@@ -84,12 +84,12 @@ For the likes posts have received, and the *person who liked it*
 | Tom         | 4     |
 | Steve       | 4     |
 
-- Construct a query that returns the location and the post number, for posts that
+- Construct a query that returns the location and the post id, for posts that
   have been liked by a mentor from that location.
 
   You should expect to see this:
 
-| location | post_num |
+| location | post_id |
 |----------|----------|
 | Nazareth | 20       |
 | Nazareth | 44       |
