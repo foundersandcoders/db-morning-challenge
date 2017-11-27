@@ -64,13 +64,13 @@ For storing details of FAC mentors.
 **Posts**
 For things that have been posted by mentors:
 
-| num | mentor_name |
+| id | mentor_name |
 | --- |------------ |
 
 **Likes**
 For the likes posts have received, and the *person who liked it*
 
-| mentor_name | post_num |
+| mentor_name | post_id |
 | ----------- |--------- |
 
 **The challenge:**
