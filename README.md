@@ -5,6 +5,7 @@
 ## Contents
 
 - [Intro](#Databases-morning-challenge)
+- [Basic set up](#Basic-set-up)
 - [Connect to Remote DB](#Connect-to-a-remote-database)
   - [CLI](#Using-the-CLI)
   - [Website](#Using-the-Website)
@@ -19,6 +20,11 @@
 
 The purpose of this challenge is to connect to a remote database, construct complicated queries, learn about joins and use some subqueries.
 
+### Basic set-up
+- Fork this repo
+- Clone your forked version.
+- `cd` into the repo in your command line `$ cd db-morning-challenge`
+- Install dependencies with `$ npm install`
 
 ### Connect to a remote database:
 
@@ -30,10 +36,10 @@ Heroku has a service for hosting SQL databases - once you've create a heroku app
 
 **NOTE: We are just creating a heroku `app` so that we can use the heroku remote database - our code doesn't actually make a usable website**
 
+
+These should happen _after_ you have cloned and ran `npm i`
+
 #### Using the CLI
-- Clone / fork this repo.
-- cd into the repo in your command line `$ cd db-morning-challenge`
-- Install dependencies with `$ npm install`
 - Create an app on Heroku `heroku create app-name-here --region eu` (If you haven't yet installed Heroku CLI see [here](https://devcenter.heroku.com/articles/heroku-cli)
 - Push to Heroku `git push heroku master`
 - Create a new database on Heroku: `heroku addons:create heroku-postgresql:hobby-dev --as USERS_DB`
@@ -42,9 +48,11 @@ Heroku has a service for hosting SQL databases - once you've create a heroku app
   `$ echo "export DATABASE_URL = {YOUR_COPIED_DATABASE_URL}" >> "config.env"`
 - Build your database by running: `$ node database/db_build.js`
 
-#### Using the website
-- Fork this repo into your own github account.
-- On the heroku dashboard create a new app, giving it a unique name
+**OR**
+
+#### Using the heroku website
+- Log into the heroku website
+- On the heroku dashboard, create a new app, giving it a unique name
 - Go to the `Resources` table and search `postgres` in the `Add-ons` - select the free version of `Heroku Postgres` and click `Provision`
 - Go to `Settings->Reveal Config Variables` to get the url of your database
 - Back in your command line, create a config.env file with the url of your new database. You can do that like this:
