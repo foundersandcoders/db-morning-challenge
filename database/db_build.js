@@ -9,6 +9,7 @@ const buildDatabase = () => {
       console.log(err, "error");
     } else {
       console.log("database created");
+      connection.end().then(() => console.log('connection closed'))
     }
   });
 };
