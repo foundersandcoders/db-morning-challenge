@@ -7,8 +7,7 @@
 - [Intro](#Databases-morning-challenge)
 - [Basic set up](#Basic-set-up)
 - [Connect to Remote DB](#Connect-to-a-remote-database)
-  - [CLI](#Using-the-CLI)
-  - [Website](#Using-the-Website)
+  - [CLI or Website](#Pickone)
   - [How to use](#Using-Heroku-databases)
 - [Challenge 1](#Challenge-1)
 - [Challenge 2](#Challenge-2)
@@ -30,7 +29,7 @@ The purpose of this challenge is to connect to a remote database, construct comp
 
 Using a local database is ok, but only you have access to it, as it is on your PC.
 
-To share a database between multiple developers, we can use remote databases - databases that are hosted on the cloud, and then connect to them the same way we connect to our local ones, just using a different URL - each database will have its own unique url. 
+To share a database between multiple developers, we can use remote databases - databases that are hosted on the cloud. We then connect to them the same way we connect to our local ones, just using a different URL - each database will have its own unique url. 
 
 Heroku has a service for hosting SQL databases - once you've create a heroku app (as you have been doing since week 4), you can then use a heroku `add-on` to add a database, either using the heroku command line interface (CLI) or on the website:
 
@@ -39,7 +38,11 @@ Heroku has a service for hosting SQL databases - once you've create a heroku app
 
 These should happen _after_ you have cloned and ran `npm i`
 
-#### Using the CLI
+### Pick One:
+<details>
+<summary> Using the CLI </summary> 
+<p>
+
 - Create an app on Heroku `heroku create app-name-here --region eu` (If you haven't yet installed Heroku CLI see [here](https://devcenter.heroku.com/articles/heroku-cli)
 - Push to Heroku `git push heroku master`
 - Create a new database on Heroku: `heroku addons:create heroku-postgresql:hobby-dev --as USERS_DB`
@@ -48,10 +51,14 @@ These should happen _after_ you have cloned and ran `npm i`
   `$ echo "export DATABASE_URL = {YOUR_COPIED_DATABASE_URL}" >> "config.env"`
 - Build your database by running: `$ node database/db_build.js`
 
-**OR**
+</p>
+</details>
 
-#### Using the heroku website
 <details>
+<summary> Using the website </summary> 
+
+<p>
+
 - Log into the heroku website
 - On the heroku dashboard, create a new app, giving it a unique name
 - Go to the `Resources` table and search `postgres` in the `Add-ons` - select the free version of `Heroku Postgres` and click `Provision`
@@ -59,11 +66,11 @@ These should happen _after_ you have cloned and ran `npm i`
 - Back in your command line, create a config.env file with the url of your new database. You can do that like this:
   `$ echo "export DATABASE_URL = {YOUR_COPIED_DATABASE_URL}" >> "config.env"`
 - Build your database by running: `$ node database/db_build.js`
+
+</p>
 </details>
 
-You're done!
-
-#### Using Heroku databases
+### Using Heroku databases
 
 You and your partner now both have access to the same database from the command line with `psql {YOUR_COPIED_DATABASE_URL}`
 
