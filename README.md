@@ -51,6 +51,7 @@ These should happen _after_ you have cloned and ran `npm i`
 **OR**
 
 #### Using the heroku website
+<details>
 - Log into the heroku website
 - On the heroku dashboard, create a new app, giving it a unique name
 - Go to the `Resources` table and search `postgres` in the `Add-ons` - select the free version of `Heroku Postgres` and click `Provision`
@@ -58,6 +59,7 @@ These should happen _after_ you have cloned and ran `npm i`
 - Back in your command line, create a config.env file with the url of your new database. You can do that like this:
   `$ echo "export DATABASE_URL = {YOUR_COPIED_DATABASE_URL}" >> "config.env"`
 - Build your database by running: `$ node database/db_build.js`
+</details>
 
 You're done!
 
