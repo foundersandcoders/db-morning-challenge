@@ -2,6 +2,19 @@
 
 **Maintainer**: [@shiryz](https://github.com/shiryz)  
 
+## Contents
+
+- [Intro](#Databases-morning-challenge)
+- [Connect to Remote DB](#Connect-to-a-remote-database)
+  - [CLI](#Using-the-CLI)
+  - [Website](#Using-the-Website)
+  - [How to use](#Using-Heroku-databases)
+- [Challenge 1](#Challenge-1)
+- [Challenge 2](#Challenge-2)
+  - [Challenge 2.I](#Challenge-pt-1)
+  - [Challenge 2.II](#Challenge-pt-2)
+- [Challenge 3](#Challenge-3)
+
 ## Databases morning challenge
 
 The purpose of this challenge is to connect to a remote database, construct complicated queries, learn about joins and use some subqueries.
@@ -40,7 +53,7 @@ Heroku has a service for hosting SQL databases - once you've create a heroku app
 
 You're done!
 
-### Using Heroku databases
+#### Using Heroku databases
 
 You and your partner now both have access to the same database from the command line with `psql {YOUR_COPIED_DATABASE_URL}`
 
@@ -92,7 +105,7 @@ For the likes posts have received, and the *person who liked it*
 | mentor_name | post_id |
 | ----------- |--------- |
 
-**The challenge:**
+#### Challenge Pt 1
 - Construct a query that returns the names of mentors and the number of likes each mentor got, in total, for all their posts.
 
   You should expect to see this:
@@ -103,6 +116,7 @@ For the likes posts have received, and the *person who liked it*
 | Tom         | 4     |
 | Steve       | 4     |
 
+#### Challenge Pt 2
 - Construct a query that returns the location and the post id, for posts that
   have been liked by a mentor from that location.
 
