@@ -4,9 +4,20 @@
 
 ## Databases morning challenge
 
-The purpose of this challenge is to construct complicated queries, learn about joins and use some subqueries.
+The purpose of this challenge is to connect to a remote database, construct complicated queries, learn about joins and use some subqueries.
 
-#### 5-minute setup:
+
+### Connect to a remote database:
+
+Using a local database is ok, but only you have access to it, as it is on your PC.
+
+To share a database between multiple developers, we can use remote databases - databases that are hosted on the cloud, and then connect to them the same way we connect to our local ones, just using a different URL - each database will have its own unique url. 
+
+Heroku has a service for hosting SQL databases - once you've create a heroku app (as you have been doing since week 4), you can then use a heroku `add-on` to add a database, either using the heroku command line interface (CLI) or on the website:
+
+**NOTE: We are just creating a heroku `app` so that we can use the heroku remote database - our code doesn't actually make a usable website**
+
+#### Using the CLI
 - Clone / fork this repo.
 - cd into the repo in your command line `$ cd db-morning-challenge`
 - Install dependencies with `$ npm install`
@@ -18,15 +29,24 @@ The purpose of this challenge is to construct complicated queries, learn about j
   `$ echo "export DATABASE_URL = {YOUR_COPIED_DATABASE_URL}" >> "config.env"`
 - Build your database by running: `$ node database/db_build.js`
 
+#### Using the website
+- Fork this repo into your own github account.
+- On the heroku dashboard create a new app, giving it a unique name
+- Go to the `Resources` table and search `postgres` in the `Add-ons` - select the free version of `Heroku Postgres` and click `Provision`
+- Go to `Settings->Reveal Config Variables` to get the url of your database
+- Back in your command line, create a config.env file with the url of your new database. You can do that like this:
+  `$ echo "export DATABASE_URL = {YOUR_COPIED_DATABASE_URL}" >> "config.env"`
+- Build your database by running: `$ node database/db_build.js`
+
 You're done!
 
-#### Using Heroku databases
+### Using Heroku databases
 
-Access your database from the command line with `psql {YOUR_COPIED_DATABASE_URL}`
+You and your partner now both have access to the same database from the command line with `psql {YOUR_COPIED_DATABASE_URL}`
 
 For each of the challenges below, write and test your queries in the command line and save them in a text editor when you're happy with them, so you can refer back to them later.
 
-#### Challenge 1
+### Challenge 1
 
 One of the tables you have created is a books table that looks like this:
 
@@ -50,7 +70,7 @@ You should expect to see this:
 | 5       | Pride and Prejudice                      | 21                   |
 
 
-#### Challenge 2:
+### Challenge 2:
 
 Your database contains 3 more tables:
 
@@ -108,7 +128,7 @@ For the likes posts have received, and the *person who liked it*
 | London   | 44       |
 | London   | 20       |
 
-#### Challenge 3 (bonus, you can try this one at home!)
+### Challenge 3 (bonus, you can try this one at home!)
 
 Building on the queries you wrote in level 2, construct another query that returns the **average number of likes per post** in each location.
 
@@ -118,3 +138,4 @@ You should expect to see this:
 |----------|-----|
 | London   | 4   |
 | Nazareth | 3   |
+
