@@ -18,7 +18,7 @@
   "homepage": "https://github.com/shiryz/db-morning-challenge#readme",
   "dependencies": {
     "env2": "^2.1.1",
-    "pg": "^6.1.2",
+    "pg": "^7.7.1",
     "url": "^0.11.0"
   }
 }
