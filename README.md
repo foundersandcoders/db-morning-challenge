@@ -1,67 +1,120 @@
+**Author**: [@shiryz](https://github.com/shiryz)  
+
+**Maintainer**: [@shiryz](https://github.com/shiryz)  
+
 ## Databases morning challenge
 
-The purpose of this challenge is to construct complicated queries, learn about joins
-and use sub-queries.
+The purpose of this challenge is to construct complicated queries, learn about joins and use some subqueries.
 
-#### 5 - minutes setup:
- - Go to [elephantsql](https://www.elephantsql.com/).
- - Login via github.
- - Create a new instance , in order to create the new database.
- - Clone / fork this repo.
- - Type `cd db-morning-challenge` into your command line.
- - Type `npm install` in your command line.
- - Create a `config.env` file.
-  - You can do so by typing `touch config.env` in the command line or manually in your favorite editor.
- - In the `config.env` file add a variable called `DB_URL`, and its value is the
-  url provided after creating the database on elephantsql (clicking on the database
-    created, Details tab and copying the url).
-  - Run `node database/db_build.js`. (This step should log database created to your
-    terminal and may take a few moments to finish).
+#### 5-minute setup:
+- Clone / fork this repo.
+- cd into the repo in your command line `$ cd db-morning-challenge`
+- Install dependencies with `$ npm install`
+- Create an app on Heroku `heroku create app-name-here --region eu` (If you haven't yet installed Heroku CLI see [here](https://devcenter.heroku.com/articles/heroku-cli)
+- Push to Heroku `git push heroku master`
+- Create a new database on Heroku: `heroku addons:create heroku-postgresql:hobby-dev --as USERS_DB`
+- Find the database url, either on the heroku dashboard for your project, under settings (click reveal config vars), or by using `heroku config -s | grep USERS_DB` (note: make sure to remove the quotations around the url when using this method).
+- Back in your command line, create a config.env file with the url of your new database. You can do that like this
+  `$ echo "export DATABASE_URL = {YOUR_COPIED_DATABASE_URL}" >> "config.env"`
+- Build your database by running: `$ node database/db_build.js`
 
-By doing these steps you will have created a database and then running `db_build.js`
-will create the tables.
-Going to browser tab in elephantsql will allow you to view the tables and manipulate
-them.
+You're done!
 
-#### Warm up challenge:
+#### Using Heroku databases
 
-One of the tables you have created is a books table:
+Access your database from the command line with `psql {YOUR_COPIED_DATABASE_URL}`
+
+For each of the challenges below, write and test your queries in the command line and save them in a text editor when you're happy with them, so you can refer back to them later.
+
+#### Challenge 1
+
+One of the tables you have created is a books table that looks like this:
 
 | book_id | book_name | year | max_reservation_time | library |
 | ------- | --------- | ---- | -------------------- | ------- |
 
-your challenge is to construct a query that returns the book_id, book_name, max_reservation_time
-of books that can be reserved for time that is greater than the avg reservation time
-in the book's library.
+your challenge is to construct a query that returns the following columns:
+* `book_id`,
+* `book_name`,
+* `max_reservation_time`
+
+**AND** to return only the books that can be reserved for a time greater than the **average** reservation time of *its own* library group. (hint: We're not trying to find the overall average across all libraries)
 
 *Hint: try using sub queries*
 
-#### Level 2 challenge:
+You should expect to see this:
 
-You have created 3 tables, mentors table, it includes the mentor's name and the
-location where they're based:
+| book_id | book_name                                | max_reservation_time |
+|---------|------------------------------------------|----------------------|
+| 1       | Javascript: The Good Parts               | 21                   |
+| 5       | Pride and Prejudice                      | 21                   |
+
+
+#### Challenge 2:
+
+Your database contains 3 more tables:
+
+**Mentors**
+For storing details of FAC mentors.
 
 | name | location |
 | ---- |--------- |
 
-a posts table, which includes the post's number and the name of the mentor who
-posted it:
+**Posts**
+For things that have been posted by mentors:
 
-| num | mentor_name |
+| id | mentor_name |
 | --- |------------ |
 
-a likes table, which includes the mentor's name who liked the post and the number
-of the post they liked:
+**Likes**
+For the likes posts have received, and the *person who liked it*
 
-| mentor_name | post_num |
+| mentor_name | post_id |
 | ----------- |--------- |
 
-The challenge:
-- Construct a query that returns the number of likes every person got.
-- Construct a query that returns the location and the post number, for posts that
+**The challenge:**
+- Construct a query that returns the names of mentors and the number of likes each mentor got, in total, for all their posts.
+
+  You should expect to see this:
+
+| mentor_name | count |
+|-------------|-------|
+| Shireen     | 9     |
+| Tom         | 4     |
+| Steve       | 4     |
+
+- Construct a query that returns the location and the post id, for posts that
   have been liked by a mentor from that location.
 
-#### Level 3 challenge (bonus):
+  You should expect to see this:
 
-Building on the queries you just wrote (Level 2), Construct a query that returns
-the average number of likes per post in each location.
+| location | post_id |
+|----------|----------|
+| Nazareth | 20       |
+| Nazareth | 44       |
+| Nazareth | 19       |
+| Nazareth | 57       |
+| Nazareth | 32       |
+| Nazareth | 20       |
+| Nazareth | 19       |
+| Nazareth | 44       |
+| Nazareth | 20       |
+| Nazareth | 19       |
+| London   | 19       |
+| London   | 57       |
+| London   | 32       |
+| London   | 44       |
+| London   | 32       |
+| London   | 44       |
+| London   | 20       |
+
+#### Challenge 3 (bonus, you can try this one at home!)
+
+Building on the queries you wrote in level 2, construct another query that returns the **average number of likes per post** in each location.
+
+You should expect to see this:
+
+| location | avg |
+|----------|-----|
+| London   | 4   |
+| Nazareth | 3   |
