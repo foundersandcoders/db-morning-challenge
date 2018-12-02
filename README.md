@@ -83,8 +83,7 @@ For the likes posts have received, and the *person who liked it*
 | Tom         | 4     |
 | Steve       | 4     |
 
-- Construct a query that returns the location and the post id, for posts that
-  have been liked by a mentor from that location.
+- Construct a query that returns the location and the post id, for each of the likes. The post_id is the id of the post that has been liked and the location is the location of the mentor that did the liking.
 
   You should expect to see this:
 
