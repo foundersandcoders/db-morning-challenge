@@ -1,9 +1,12 @@
 -- 1.
+-- -- -- -- -- NEW SOLUTION -- -- -- -- -- 
   SELECT book_id, book_name, max_reservation_time
   FROM books B
-  WHERE max_reservation_time >
-  (SELECT AVG(max_reservation_time) FROM books
-  WHERE library = B.library);
+  WHERE max_reservation_time > 
+  (SELECT averages FROM 
+   (SELECT AVG(max_reservation_time) 
+    AS averages, library AS lib from books GROUP BY library) 
+   AS libraries WHERE library = lib)
 
 -- 2.
 -- 2.1.
