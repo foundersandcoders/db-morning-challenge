@@ -7,13 +7,13 @@
 - [Intro](#Databases-morning-challenge)
 - [Basic set up](#Basic-set-up)
 - [Connect to Remote DB](#Connect-to-a-remote-database)
-  - [CLI or Website](#Pickone)
+  - [CLI or Website](#pick-one)
   - [How to use](#Using-Heroku-databases)
 - [Challenge 1](#Challenge-1)
 - [Challenge 2](#Challenge-2)
   - [Challenge 2.I](#Challenge-pt-1)
   - [Challenge 2.II](#Challenge-pt-2)
-- [Challenge 3](#Challenge-3)
+- [Challenge 3](#challenge-3-bonus-you-can-try-this-one-at-home)
 
 ## Databases morning challenge
 
